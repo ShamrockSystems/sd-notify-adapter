@@ -1,0 +1,26 @@
+[package]
+name = "sd-notify-adapter"
+version = "0.1.0"
+edition = "2021"
+description = "Health Status Endpoint Adapter for systemd NOTIFY_SOCKET Services"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/ShamrockSystems/sd-notify-adapter"
+keywords = ["systemd", "kubernetes", "health-check"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+axum = "0.7"
+chrono = "0.4"
+envconfig = "0.10"
+nix = { version = "0.28", features = ["socket"] }
+thiserror = "1.0"
+tokio = { version = "1.36", features = ["full"] }
+serde = { version = "1.0" }
+derive_more = "0.99"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["json", "valuable"] }
+tokio-util = "0.7"
+tower-http = { version = "0.5", features = ["trace"] }
+const_format = { version = "0.2" }
+valuable = { version = "0.1", features = ["derive"] }
+valuable-serde = "0.1"
